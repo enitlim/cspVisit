@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { CspProvider } from "./context/cspContext";
 import ProtectedRoute from './CommonComponents/protectedRoute';
+import { Provider } from "react-redux";
+import {store} from "./redux/store/store"
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -19,11 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
-        <CspProvider>
-          <ProtectedRoute>
-            {children}
-          </ProtectedRoute>          
-        </CspProvider>
+        {/* <CspProvider> */}
+          {/* <ProtectedRoute> */}
+          <Provider store={store}>
+              {children}
+          </Provider>
+            
+          {/* </ProtectedRoute>           */}
+        {/* </CspProvider> */}
       </body>
     </html>
   );
