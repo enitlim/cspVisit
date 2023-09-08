@@ -1,6 +1,6 @@
 import React from 'react'
 import TopNavBar from '../CommonComponents/topNavBar'
-import ItemMenuList from './itemMenuList'
+import ItemMenuList from '../CommonComponents/itemMenuList'; 
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import ReportProblemIcon from '@mui/icons-material/ReportProblem';
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -21,10 +21,10 @@ const HomePage = () => {
         desc: "Click to add user",
       },
       {
-        title: "Add CSP",
+        title: "Manage CSP",
         icon: PersonAddIcon,
-        route: "../loggedPages/addCsp",
-        desc: "Click to add user",
+        route: "../loggedPages/cspManagement",
+        desc: "Click to manage CSP",
       },
       {
         title: "View All CSP",
@@ -59,7 +59,7 @@ const HomePage = () => {
     ];
   return (
     <>
-      <ProtectedRoute>
+      
         <TopNavBar header="Home" />
         {/* style={{justifyContent:'space-evenly', alignContent:'center'}} */}
         <Grid
@@ -81,7 +81,7 @@ const HomePage = () => {
             </Grid>
           ))}
         </Grid>
-      </ProtectedRoute>
+     
     </>
   );
 }

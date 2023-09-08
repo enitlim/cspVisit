@@ -15,6 +15,7 @@ import { CspContext } from "../context/cspContext";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import { useSelector } from 'react-redux';
 const style = {
   position: "absolute" as "absolute",
   top: "50%",
@@ -36,8 +37,10 @@ const CustomDrawer: React.FC<CustomDrawerProps> = ({ open, onClose }) => {
     const [openSignoutModal, setOpenSignoutModal] = React.useState(false);
     const handleOpen = () => setOpenSignoutModal(true);
     const handleClose = () => setOpenSignoutModal(false);
-  const { currentUser } = useContext(CspContext);
+  const { userData } = useSelector((state:any) => state.user);
 
+
+  console.log("Current user atsideNavBar: " + JSON.stringify(userData));
   
   return (
     <>
@@ -91,9 +94,7 @@ const CustomDrawer: React.FC<CustomDrawerProps> = ({ open, onClose }) => {
                   <PersonIcon />
                 </ListItemIcon>
                 <ListItemText
-                  primary={
-                    currentUser.length > 0 ? currentUser[0]["emp_name"] : ""
-                  }
+                  primary={userData!==null ? userData[0]["emp_name"] : ""}
                 />
               </ListItem>
               <ListItem key="logout" disablePadding>

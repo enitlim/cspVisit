@@ -7,6 +7,8 @@ import { auth } from "../../../firebase/SettingFirebase";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { useSelector } from "react-redux";
+
 type Inputs = {
   email: string;
   password: string;
@@ -16,7 +18,8 @@ type Inputs = {
 
 
 const Login: React.FC = () => {
-const {login}=useContext(CspContext);
+  const login = useSelector((state: any) => state.auth.isLoading);
+// const {login}=useContext(CspContext);
 const route=useRouter();
 const [isLoading, setisLoading] = useState(true);
 
@@ -24,7 +27,7 @@ useEffect(() => {
   const loginCheck=async()=>{
     if (login === "logged") {
       route.replace("/home");
-    } else if (login === "notlogged") {
+    } else if (login === "noLogged") {
       setisLoading(false);
     }
   }

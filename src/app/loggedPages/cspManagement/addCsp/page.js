@@ -14,7 +14,7 @@ import Button from "@mui/material/Button";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { getDocs, query, where, collection, addDoc } from "firebase/firestore";
-import { db } from "../../../../firebase/SettingFirebase";
+import { db } from "../../../../../firebase/SettingFirebase";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

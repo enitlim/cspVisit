@@ -14,35 +14,16 @@ const Home = () => {
   const { userID, email, accessToken, isLoading } = useSelector(
     (state) => state.auth
   );
-  const userDetails = useSelector((state) => state.user.userData);
+  const { userData } = useSelector((state) => state.user);
   console.log(userID);
   console.log(email);
   console.log(accessToken);
   console.log(isLoading);
-  console.log(userDetails);
+  console.log(userData);
   useEffect(() => {
     dispatch(listentoAuthChanges());
   }, [dispatch]);
-   const {login, currentUser}=useContext(CspContext);
-   console.log("Login Status=> ",login);
-   console.log("Current User Status=>",currentUser);
-
-   useEffect(() => {
-     if (login=="logged" && currentUser!="") {
-      setloading(1);
-      route.push("/home")
-        console.log("Go to Home Page");
-      }
-      else if (login=="notlogged" && currentUser=="") {
-        setloading(1);
-        route.push("/login")
-        console.log("Go to Login Page");
-      }
-      else if(login=="loading"){
-
-      }
-
-   }, [login,currentUser])
+ 
    useEffect(() => {
      if (isLoading == "logged" && userID != "") {
        //  setloading(1);
