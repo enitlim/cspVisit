@@ -23,26 +23,26 @@ const Home = () => {
   useEffect(() => {
     dispatch(listentoAuthChanges());
   }, [dispatch]);
-  //  const {login, currentUser}=useContext(CspContext);
-  //  console.log("Login Status=> ",login);
-  //  console.log("Current User Status=>",currentUser);
+   const {login, currentUser}=useContext(CspContext);
+   console.log("Login Status=> ",login);
+   console.log("Current User Status=>",currentUser);
 
-  //  useEffect(() => {
-  //    if (login=="logged" && currentUser!="") {
-  //     setloading(1);
-  //     route.push("/home")
-  //       console.log("Go to Home Page");
-  //     }
-  //     else if (login=="notlogged" && currentUser=="") {
-  //       setloading(1);
-  //       route.push("/login")
-  //       console.log("Go to Login Page");
-  //     }
-  //     else if(login=="loading"){
+   useEffect(() => {
+     if (login=="logged" && currentUser!="") {
+      setloading(1);
+      route.push("/home")
+        console.log("Go to Home Page");
+      }
+      else if (login=="notlogged" && currentUser=="") {
+        setloading(1);
+        route.push("/login")
+        console.log("Go to Login Page");
+      }
+      else if(login=="loading"){
 
-  //     }
+      }
 
-  //  }, [login,currentUser])
+   }, [login,currentUser])
    useEffect(() => {
      if (isLoading == "logged" && userID != "") {
        //  setloading(1);
