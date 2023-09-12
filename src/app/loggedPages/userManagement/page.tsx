@@ -1,6 +1,6 @@
 import React from 'react'
 import TopNavBar from '@/app/CommonComponents/topNavBar'
-import ItemMenuList from '@/app/home/itemMenuList';
+import ItemMenuList from '@/app/CommonComponents/itemMenuList';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import Grid from '@mui/material/Grid'

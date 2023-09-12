@@ -40,7 +40,7 @@ const CustomDrawer: React.FC<CustomDrawerProps> = ({ open, onClose }) => {
   const { userData } = useSelector((state:any) => state.user);
 
 
-  console.log("Current user atsideNavBar: " + JSON.stringify(userData));
+  // console.log("Current user atsideNavBar: " + JSON.stringify(userData));
   
   return (
     <>
